@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#07111f">
+<title>Auto USDT</title>
+<script src="https://telegram.org/js/telegram-web-app.js?65"></script>
+<style>
+:root{--bg:#07111f;--panel:#101d2d;--panel2:#14243a;--line:#23364c;--text:#eef5ff;--muted:#91a4ba;--green:#22d3a0;--lime:#b7f36b;--red:#ff6b78;--gold:#f6c85f}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#173c43 0,transparent 38%),var(--bg);color:var(--text);font:15px/1.45 Inter,system-ui,-apple-system,Segoe UI,sans-serif;padding-bottom:92px}button,input,select{font:inherit}button{cursor:pointer;border:0}.wrap{max-width:560px;margin:auto;padding:18px 16px 30px}.top{display:flex;align-items:center;justify-content:space-between;margin:5px 0 20px}.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:.3px}.logo{width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg,var(--green),#72e7be);display:grid;place-items:center;color:#06251e;font-size:21px;font-weight:900;box-shadow:0 8px 24px #22d3a033}.pill{border:1px solid var(--line);background:#0d1a29;color:var(--muted);border-radius:99px;padding:7px 11px;font-size:11px}.screen{display:none;animation:fade .18s ease}.screen.active{display:block}@keyframes fade{from{opacity:.5;transform:translateY(4px)}to{opacity:1;transform:none}}h1{font-size:25px;line-height:1.15;margin:6px 0 8px}h2{font-size:18px;margin:0 0 13px}.sub{color:var(--muted);font-size:13px}.card{background:linear-gradient(145deg,#14263a,#0e1a2a);border:1px solid var(--line);border-radius:20px;padding:17px;margin:14px 0}.hero{background:linear-gradient(130deg,#123b3a,#12273a 68%,#172b3e);border:1px solid #236158}.eyebrow{font-size:11px;letter-spacing:1.3px;color:#a9c8c5;text-transform:uppercase;font-weight:750}.balance{font-size:34px;font-weight:850;letter-spacing:-1px;margin:8px 0}.green{color:var(--green)}.muted{color:var(--muted)}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:#0c1928;border:1px solid var(--line);border-radius:15px;padding:13px}.stat b{display:block;font-size:18px;margin-top:4px}.btn{width:100%;border-radius:13px;padding:13px 15px;font-weight:800;background:var(--green);color:#06251e;margin-top:10px}.btn.secondary{background:#1b3047;color:var(--text);border:1px solid #2a425b}.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}.btn.danger{background:#4a202c;color:#ffb4bc}.btn:disabled{opacity:.45;cursor:not-allowed}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{margin:12px 0}.field label{display:block;color:var(--muted);font-size:12px;margin:0 0 7px}.field input,.field select{width:100%;padding:13px 14px;border-radius:12px;background:#091625;border:1px solid var(--line);color:var(--text);outline:none}.field input:focus,.field select:focus{border-color:var(--green)}.nav{position:fixed;bottom:0;left:0;right:0;background:#091523f2;border-top:1px solid var(--line);backdrop-filter:blur(16px);display:flex;justify-content:center;z-index:5;padding:9px 5px calc(9px + env(safe-area-inset-bottom))}.navinner{width:min(560px,100%);display:grid;grid-template-columns:repeat(5,1fr);gap:3px}.nav button{background:transparent;color:#8195ab;font-size:10px;padding:5px 2px;border-radius:11px}.nav button span{display:block;font-size:19px;margin-bottom:2px}.nav button.active{color:var(--green);background:#14302f}.channel{display:flex;align-items:center;gap:11px;padding:12px 0;border-bottom:1px solid var(--line)}.channel:last-child{border:0}.channel .avatar{width:38px;height:38px;background:#1c3850;border-radius:13px;display:grid;place-items:center}.channel .info{flex:1;min-width:0}.channel .info b{display:block}.channel .info small{color:var(--muted)}.tag{font-size:10px;color:var(--gold);border:1px solid #66552c;border-radius:30px;padding:4px 7px}.task{display:flex;align-items:center;gap:10px;padding:13px 0;border-bottom:1px solid var(--line)}.task:last-child{border:0}.taskicon{width:40px;height:40px;border-radius:13px;background:#1c354a;display:grid;place-items:center;font-size:18px}.taskinfo{flex:1}.taskinfo b{display:block}.taskinfo small{color:var(--muted)}.smallbtn{background:#1c3c3b;color:var(--green);border:1px solid #2d6256;border-radius:10px;padding:8px 11px;font-size:12px;font-weight:800}.notice{font-size:12px;color:#c1d0df;background:#0b1a29;border:1px solid var(--line);border-radius:12px;padding:11px;margin-top:12px}.notice.warn{border-color:#6b5429;color:#f4d997}.notice.good{border-color:#28634f;color:#a8efd6}.history{padding:12px 0;border-bottom:1px solid var(--line)}.history:last-child{border:0}.toast{position:fixed;top:16px;left:50%;transform:translateX(-50%);background:#e8fff7;color:#073328;border-radius:12px;padding:11px 16px;font-weight:750;font-size:13px;z-index:20;display:none;box-shadow:0 8px 30px #0005;max-width:90%;text-align:center}.adminhide{display:none!important}.sectionhead{display:flex;justify-content:space-between;align-items:center;margin:20px 0 10px}.link{color:var(--green);text-decoration:none;font-size:12px}.footer{text-align:center;color:#637990;font-size:10px;margin-top:24px}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+<div class="wrap">
+ <header class="top"><div class="brand"><div class="logo">₮</div><div>AUTO <span class="green">USDT</span><div class="sub" style="font-size:10px">SMART EARNING HUB</div></div></div><div class="pill" id="tgStatus">WEB PREVIEW</div></header>
+
+ <section class="screen active" id="channels">
+  <div class="eyebrow">One quick step</div><h1>Welcome to Auto USDT</h1><p class="sub">Join our official community channels to stay updated and unlock your dashboard.</p>
+  <div class="card">
+   <div class="row"><h2 style="margin:0">Official channels</h2><span class="tag">REQUIRED</span></div>
+   <div id="channelList"></div>
+   <button class="btn" onclick="checkChannels()">I've joined — Check access</button>
+   <p class="sub" style="margin:10px 0 0">Channel membership is only confirmed after your bot/backend verifies it. This preview button demonstrates the flow.</p>
+  </div>
+  <div class="notice">🔒 Never share your wallet recovery phrase or private key. Auto USDT will never ask for them.</div>
+ </section>
+
+ <section class="screen" id="home">
+  <div class="row"><div><div class="eyebrow">Your account</div><h1 id="hello">Welcome back</h1></div><div class="pill" id="userTag">USER</div></div>
+  <div class="card hero"><div class="eyebrow">Available balance</div><div class="balance"><span id="balance">0.00</span> <span style="font-size:17px;color:#a9c8c5">USDT</span></div><div class="row"><span class="sub">Demo balance</span><span class="sub">● Preview mode</span></div><div class="actions" style="margin-top:15px"><button class="btn" style="margin:0" onclick="go('deposit')">＋ Deposit</button><button class="btn secondary" style="margin:0" onclick="go('withdraw')">↗ Withdraw</button></div></div>
+  <div class="grid"><div class="stat"><span class="sub">Total earned</span><b id="earned">0.00 USDT</b></div><div class="stat"><span class="sub">Referrals</span><b id="referrals">0</b></div><div class="stat"><span class="sub">Tasks done</span><b id="tasksDone">0</b></div><div class="stat"><span class="sub">Account status</span><b class="green" style="font-size:14px">Preview</b></div></div>
+  <div class="sectionhead"><h2 style="margin:0">Quick actions</h2><span class="sub">Explore Auto USDT</span></div>
+  <div class="card"><div class="row"><div><b>Daily check-in</b><div class="sub">Open the app daily to view available activities</div></div><span style="font-size:25px">🎁</span></div><button class="btn secondary" onclick="go('tasks')">View activities</button></div>
+  <div class="notice warn">Demo mode: balances, rewards and transactions shown here are stored only on this device. No real USDT is being credited or transferred.</div>
+ </section>
+
+ <section class="screen" id="tasks">
+  <div class="eyebrow">Earn section</div><h1>Tasks & rewards</h1><p class="sub">Complete community activities and track your progress.</p>
+  <div class="card"><div class="row"><div><b>Task progress</b><div class="sub" id="taskProgress">0 of 3 completed</div></div><b class="green" id="taskPercent">0%</b></div><div style="height:8px;background:#071321;border-radius:9px;margin-top:13px;overflow:hidden"><div id="progressBar" style="height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--lime));border-radius:9px"></div></div></div>
+  <div class="card" id="taskList"></div>
+  <div class="notice">Rewards in this standalone preview are illustrative. Configure real tasks and reward rules on your server before launch.</div>
+ </section>
+
+ <section class="screen" id="deposit">
+  <div class="eyebrow">Add funds</div><h1>Deposit USDT</h1><p class="sub">Choose a supported network and follow the instructions provided by your operator.</p>
+  <div class="card"><div class="field"><label>Network</label><select id="depNetwork"><option value="TRC20">TRON (TRC20)</option><option value="BEP20">BNB Smart Chain (BEP20)</option><option value="TON">TON</option><option value="ERC20">Ethereum (ERC20)</option></select></div><div class="field"><label>Deposit amount (USDT)</label><input id="depAmount" type="number" min="1" step="0.01" placeholder="e.g. 10.00"></div><div class="field"><label>Transaction hash (after sending)</label><input id="depHash" placeholder="Paste transaction hash"></div><button class="btn" onclick="submitDeposit()">Submit deposit request</button><div class="notice warn">Deposit address is intentionally not hardcoded. Your backend must provide a verified address for the selected network. Sending on the wrong network may permanently lose funds.</div></div>
+ </section>
+
+ <section class="screen" id="withdraw">
+  <div class="eyebrow">Cash out</div><h1>Withdraw USDT</h1><p class="sub">Enter your receiving wallet and withdrawal amount.</p>
+  <div class="card"><div class="row"><span class="sub">Available balance</span><b><span id="withdrawBalance">0.00</span> USDT</b></div><div class="field"><label>Network</label><select id="wdNetwork"><option value="TRC20">TRON (TRC20)</option><option value="BEP20">BNB Smart Chain (BEP20)</option><option value="TON">TON</option><option value="ERC20">Ethereum (ERC20)</option></select></div><div class="field"><label>Wallet address</label><input id="wdWallet" placeholder="Enter your USDT receiving address"></div><div class="field"><label>Amount (USDT)</label><input id="wdAmount" type="number" min="1" step="0.01" placeholder="Minimum set by admin"></div><button class="btn" onclick="submitWithdrawal()">Request withdrawal</button><div class="notice warn">A real withdrawal must be validated and processed by a secure server. This preview does not send crypto or reserve funds.</div></div>
+ </section>
+
+ <section class="screen" id="referrals">
+  <div class="eyebrow">Grow together</div><h1>Invite & earn</h1><p class="sub">Share your personal invite link with friends.</p>
+  <div class="card hero"><div class="eyebrow">Your referral link</div><div id="refLink" style="font-size:13px;word-break:break-all;margin:10px 0">Open inside Telegram to create your link</div><button class="btn" onclick="copyReferral()">Copy invite link</button></div>
+  <div class="grid"><div class="stat"><span class="sub">Invited friends</span><b id="refCount">0</b></div><div class="stat"><span class="sub">Referral rewards</span><b>— USDT</b></div></div>
+  <div class="notice">Referral rewards and anti-fraud checks must be calculated on the backend, never trusted from browser storage.</div>
+ </section>
+
+ <section class="screen" id="history">
+  <div class="eyebrow">Activity</div><h1>Transaction history</h1><p class="sub">Your recent deposit and withdrawal requests.</p><div class="card" id="historyList"></div>
+ </section>
+
+ <section class="screen" id="admin">
+  <div class="eyebrow">Management</div><h1>Admin panel</h1><p class="sub">Preview controls only. Protect all admin actions with server-side authorization.</p>
+  <div class="card"><h2>App configuration</h2><div class="field"><label>Minimum withdrawal (USDT)</label><input id="adminMin" type="number" value="5"></div><div class="field"><label>Referral reward (USDT)</label><input id="adminRef" type="number" value="0.5" step="0.01"></div><div class="field"><label>Support username or URL</label><input id="adminSupport" placeholder="@your_support"></div><button class="btn" onclick="saveAdmin()">Save preview settings</button></div>
+  <div class="card"><h2>Operations checklist</h2><p class="sub">Payout request destination configured: <b>@TGCRYPTOUPDATEZZ</b>. A Telegram bot backend must post requests to this group; this static page cannot send group messages by itself.</p><p class="sub">Before production: verify Telegram initData, create database-backed users, validate channel membership, connect a payment provider or audited wallet service, and log every transaction.</p><div class="notice warn">Admin screen visibility in this file is not security. Anyone can inspect or edit client-side HTML/JavaScript.</div></div>
+ </section>
+
+ <div class="footer">AUTO USDT • Secure by design • Preview build</div>
+</div>
+<nav class="nav"><div class="navinner">
+ <button id="nav-home" onclick="go('home')"><span>⌂</span>Home</button>
+ <button id="nav-tasks" onclick="go('tasks')"><span>✓</span>Tasks</button>
+ <button id="nav-deposit" onclick="go('deposit')"><span>＋</span>Deposit</button>
+ <button id="nav-withdraw" onclick="go('withdraw')"><span>↗</span>Withdraw</button>
+ <button id="nav-more" onclick="go('more')"><span>☰</span>More</button>
+</div></nav>
+<script>
+const CONFIG={channels:[{name:"TGKYROUPDATES — Main channel",handle:"@TGKYROUPDATES",url:"https://t.me/TGKYROUPDATES"},{name:"TGCRYPTOUPDATEZ — News",handle:"@TGCRYPTOUPDATEZ",url:"https://t.me/TGCRYPTOUPDATEZ"},{name:"TGCRYPTOUPDATEZZ — Updates",handle:"@TGCRYPTOUPDATEZZ",url:"https://t.me/TGCRYPTOUPDATEZZ"}],payoutGroup:"@TGCRYPTOUPDATEZZ",adminTelegramId:"8243824380",minWithdraw:5};
+const tg=window.Telegram?.WebApp; if(tg){tg.ready();tg.expand();tg.setHeaderColor?.("#07111f");tg.setBackgroundColor?.("#07111f");document.getElementById("tgStatus").textContent="TELEGRAM APP";}
+const demoUser=tg?.initDataUnsafe?.user||{id:0,first_name:"Guest",username:""};
+const storeKey="autousdt_preview_v1";
+let state=JSON.parse(localStorage.getItem(storeKey)||"null")||{balance:0,earned:0,referrals:0,done:[],history:[],unlocked:false};
+function save(){localStorage.setItem(storeKey,JSON.stringify(state));render();}
+function toast(s){let t=document.getElementById("toast");t.textContent=s;t.style.display="block";setTimeout(()=>t.style.display="none",2600);}
+function go(id){if(id==="more"){let admin=String(demoUser.id)===CONFIG.adminTelegramId;let choice=prompt("More options: type referrals, history"+(admin?", admin":""));if(choice==="referrals"||choice==="history"||(choice==="admin"&&admin))id=choice;else return;}document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id)?.classList.add("active");document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));document.getElementById("nav-"+(id==="referrals"||id==="history"||id==="admin"?"more":id))?.classList.add("active");if(id==="admin"&&String(demoUser.id)!==CONFIG.adminTelegramId){toast("Admin access is not configured for this account");go("home");return;}if(id==="home"||id==="withdraw"||id==="history")render();}
+function renderChannels(){document.getElementById("channelList").innerHTML=CONFIG.channels.map(c=>`<div class="channel"><div class="avatar">✦</div><div class="info"><b>${c.name}</b><small>${c.handle}</small></div><a class="smallbtn" href="${c.url}" target="_blank" rel="noopener">Join</a></div>`).join("");}
+function render(){document.getElementById("hello").textContent="Hi, "+(demoUser.first_name||"there");document.getElementById("userTag").textContent=demoUser.username?"@"+demoUser.username:"ID "+(demoUser.id||"PREVIEW");["balance","withdrawBalance"].forEach(id=>document.getElementById(id).textContent=Number(state.balance).toFixed(2));document.getElementById("earned").textContent=Number(state.earned).toFixed(2)+" USDT";document.getElementById("referrals").textContent=state.referrals;document.getElementById("refCount").textContent=state.referrals;document.getElementById("tasksDone").textContent=state.done.length;let tasks=[["Join announcements","Join the official update channel","📣"],["Explore the community","Visit the community group","👥"],["Read safety rules","Learn how to protect your wallet","🛡️"]];document.getElementById("taskList").innerHTML=tasks.map((t,i)=>`<div class="task"><div class="taskicon">${t[2]}</div><div class="taskinfo"><b>${t[0]}</b><small>${t[1]}</small></div><button class="smallbtn" onclick="completeTask(${i})">${state.done.includes(i)?"Done":"Open"}</button></div>`).join("");let p=Math.round(state.done.length/3*100);document.getElementById("taskProgress").textContent=state.done.length+" of 3 completed";document.getElementById("taskPercent").textContent=p+"%";document.getElementById("progressBar").style.width=p+"%";const botUsername=(window.AUTO_USDT_BOT_USERNAME||"YOUR_BOT_USERNAME").replace(/^@/,"");let referralCode=localStorage.getItem("autousdt_ref_code");if(!referralCode){referralCode="R"+String(demoUser.id||Math.floor(Math.random()*1e9)).slice(-8);localStorage.setItem("autousdt_ref_code",referralCode);}let ref=`https://t.me/${botUsername}?start=r_${referralCode}`;document.getElementById("refLink").textContent=ref;document.getElementById("historyList").innerHTML=state.history.length?state.history.slice().reverse().map(h=>`<div class="history"><div class="row"><b>${h.type}</b><span class="tag">${h.status}</span></div><div class="row sub"><span>${h.network} · ${h.date}</span><b>${h.amount} USDT</b></div></div>`).join(""):'<p class="sub">No transactions yet.</p>';document.getElementById("admin").classList.toggle("adminhide",String(demoUser.id)!==CONFIG.adminTelegramId);}
+function checkChannels(){state.unlocked=true;save();go("home");toast("Preview access opened. Backend membership check required in production.");}
+function completeTask(i){if(state.done.includes(i))return;state.done.push(i);save();toast("Task marked complete in preview.");}
+function submitDeposit(){let amount=Number(document.getElementById("depAmount").value),hash=document.getElementById("depHash").value.trim(),network=document.getElementById("depNetwork").value;if(!(amount>0)||!hash){toast("Enter a valid amount and transaction hash");return;}state.history.push({type:"Deposit request",amount:amount.toFixed(2),network,status:"Pending demo",date:new Date().toLocaleString()});save();toast("Demo deposit request saved on this device.");go("history");}
+function submitWithdrawal(){let amount=Number(document.getElementById("wdAmount").value),wallet=document.getElementById("wdWallet").value.trim(),network=document.getElementById("wdNetwork").value,min=Number(document.getElementById("adminMin")?.value||CONFIG.minWithdraw);if(!wallet||!(amount>=min)){toast("Enter a wallet and amount of at least "+min+" USDT");return;}if(amount>state.balance){toast("Insufficient demo balance");return;}toast("Preview only: no withdrawal was sent.");state.history.push({type:"Withdrawal request",amount:amount.toFixed(2),network,status:"Not submitted",date:new Date().toLocaleString()});save();go("history");}
+function copyReferral(){let s=document.getElementById("refLink").textContent;if(navigator.clipboard?.writeText)navigator.clipboard.writeText(s).then(()=>toast("Invite link copied")).catch(()=>toast(s));else toast("Copy link: "+s);}
+function saveAdmin(){CONFIG.minWithdraw=Number(document.getElementById("adminMin").value)||5;toast("Saved in this page preview only.");}
+renderChannels();render();
+</script>
+</body></html>
